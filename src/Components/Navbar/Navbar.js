@@ -1,11 +1,14 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
 import ToolBar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { SaveSharp } from "@material-ui/icons";
+import NavigationIcon from "@material-ui/icons/Navigation";
+import Fab from "@material-ui/core/Fab";
 
-function Navbar() {
+function Navbar(props) {
+    function handleClick(event) {
+        props.openPopUp();
+    }
     return (
         <AppBar position="static">
             <ToolBar>
@@ -19,17 +22,28 @@ function Navbar() {
                     <Typography variant="h5" color="inherit">
                         Tier Listify
                     </Typography>
-                    <Button
-                        variant="contained"
+                    <Fab
+                        variant="extended"
                         color="secondary"
-                        size="large"
-                        startIcon={<SaveSharp />}
+                        aria-label="add"
+                        size="medium"
+                        onClick={handleClick}
                     >
-                        Add Tile
-                    </Button>
+                        <NavigationIcon />
+                        Add a tile
+                    </Fab>
                 </div>
             </ToolBar>
         </AppBar>
     );
 }
 export default Navbar;
+
+//<Button
+//variant="contained"
+//color="secondary"
+//size="large"
+//startIcon={<SaveSharp />}
+//>
+//Add Tile
+//</Button>
