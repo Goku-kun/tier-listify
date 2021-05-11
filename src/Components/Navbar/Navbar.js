@@ -10,7 +10,7 @@ function Navbar(props) {
         props.openPopUp();
     }
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
             <ToolBar>
                 <div
                     style={{
