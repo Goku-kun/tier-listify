@@ -3,7 +3,7 @@ import "./Card.css";
 
 function CardComponent(props) {
     function handleClick(event) {
-        props.removeCard(props.id);
+        props.removeCard(props.id, props.type);
     }
 
     return (

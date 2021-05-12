@@ -17,6 +17,7 @@ class ClassList extends React.Component {
                                 id={card.id}
                                 name={card.name}
                                 image={card.image}
+                                type={card.type}
                                 removeCard={this.props.removeCard}
                             />
                         );

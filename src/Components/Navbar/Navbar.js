@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import ToolBar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
+import { Slide } from "@material-ui/core";
 
 function Navbar(props) {
     function handleClick(event) {
@@ -22,28 +23,23 @@ function Navbar(props) {
                     <Typography variant="h5" color="inherit">
                         Tier Listify
                     </Typography>
-                    <Fab
-                        variant="extended"
-                        color="secondary"
-                        aria-label="add"
-                        size="medium"
-                        onClick={handleClick}
-                    >
-                        <NavigationIcon />
-                        Add a tile
-                    </Fab>
+                    <div style={{ display: "flex" }}>
+                        <Slide in={!props.visible} direction="left">
+                            <Fab
+                                variant="extended"
+                                color="secondary"
+                                aria-label="add"
+                                size="medium"
+                                onClick={handleClick}
+                            >
+                                <NavigationIcon />
+                                Add a tile
+                            </Fab>
+                        </Slide>
+                    </div>
                 </div>
             </ToolBar>
         </AppBar>
     );
 }
 export default Navbar;
-
-//<Button
-//variant="contained"
-//color="secondary"
-//size="large"
-//startIcon={<SaveSharp />}
-//>
-//Add Tile
-//</Button>
